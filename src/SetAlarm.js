@@ -121,27 +121,15 @@ export class SetAlarm extends Component {
                                 ))}
                             </select>
                         </div>
-
                     </div>
+                    <select className="urgencyBox">
+                        {urgency.map((e) => (
+                            <option value={e.value}>{e.label}</option>
+                        ))}
+                    </select>
                     <h1 id="time">{this.state.hour}  : {this.state.minute} {this.state.AM}</h1>
                     <Button id="setAlarmButton" onClick={this.createAlarm}>Set Alarm</Button>
                 </div>
-                {/* <Table>
-                    <tbody>
-                        {table()}
-                    </tbody>
-                </Table> */}
-                <select className="urgencyBox">
-                    {urgency.map((e) => (
-                    
-                            <option value={e.value}>{e.label}</option>
-                     
-                        
-                    ))}
-                </select>
-
-
-
             </div>
         );
     }
