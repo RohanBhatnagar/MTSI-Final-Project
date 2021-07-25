@@ -1,0 +1,81 @@
+.bigContainer{
+    padding: 15px;
+    margin-top: 5px;
+    font-family: 'Cardo';
+}
+
+.container1{
+    padding: 0px;
+    height: 275px;
+    width: 100%;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.selections {
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /*background-color: #c1ffa8;*/
+ 
+    width: 230px;
+    font-family: 'Cardo';
+    margin-top: -5px;
+   
+}
+
+#title{
+    font-size: 35px;
+    padding: 10px;
+    margin-top: -20px;
+}
+
+.box {
+    height: 45px;
+    width: 60px;
+    font-size: 23px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 1px;
+    border-width: 0.1px;
+   
+}
+
+#am {
+    font-size: 21px;
+    padding-left:1px;
+}
+
+#time {
+    font-size: 46px;
+    margin-top: 20px;
+}
+
+#setAlarmButton {
+    background-color: #ff845f;
+    width: 160px;
+    margin-top: 13px;
+    height: 40px;
+    font-size: 20px;
+    border-color: #b66040;
+    transition: 0.2s all;
+ 
+}
+#setAlarmButton:active{
+    background-color:rgb(255, 92, 92);
+
+}
+
+
+@font-face {
+    font-family: 'Cardo';
+    src: local('Cardo'), url('./fonts/Cardo-Regular.ttf') format('truetype');
+
+}
+
+

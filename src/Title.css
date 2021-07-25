@@ -5,17 +5,37 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /*padding: 0.5em;*/
+    
     /*margin-bottom: 0.5em;*/
-    background-color: #F0A488;
+    /*background-color: #F0A488;*/
+    background: radial-gradient(#fd8d37,#FDAFA4);
     color: #fff;
-    font-size: 28px;
-    font-family: 'PlayfairDisplay-Italic';
-    font-style:italic;
+ 
+    
+
   }
 
+  #name {
+      font-size: 50px;
+      font-family: 'Playfair Display';
+      font-weight: 700px;
+      text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 19px #fff,
+      0 0 42px #ff834f,
+      0 0 82px #ff834f,
+      0 0 92px #ff834f,
+      0 0 102px #ff834f,
+      0 0 151px #ff834f;
+
+
+  }
   @font-face {
       font-family: 'Playfair Display';
-      src: local('Playfair Display'), url('./fonts/PlayfairDisplay-Italic.ttf') format('truetype');
-      font-style: italic;
+      src: local('Playfair Display'), url('./fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+        font-weight: 700px;
+        font-style:italic;
   }
+
+  
