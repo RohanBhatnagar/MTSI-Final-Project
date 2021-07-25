@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Select from 'react-select';
 import Button from 'react-bootstrap/Button';
 import firebase from 'firebase';
+import './SetAlarm.css'
 
 var hoursArr = [];
 var minutesArr = [];
@@ -76,35 +77,38 @@ export class SetAlarm extends Component {
         { minutes() }
         { AM() }
         return (
-            <Container>
-                <Container>
-                    <Col>
-                        <div className="select-container">
-                            <select value={this.state.hour} title="hour" onChange={this.handleChange}>
-                                {hoursArr.map((e) => (
-                                    <option value={e.value}>{e.label}</option>
-                                ))}
-                            </select>
-                        </div>
-                        <div className="select-container">
-                            <select value={this.state.minute} title="minute" onChange={this.handleChange}>
-                                {minutesArr.map((e) => (
-                                    <option value={e.value}>{e.label}</option>
-                                ))}
-                            </select>
-                        </div>
-                        <div className="select-container">
-                            <select value={this.state.AM} title="AM" onChange={this.handleChange}>
-                                {AMarr.map((e) => (
-                                    <option value={e.value}>{e.label}</option>
-                                ))}
-                            </select>
-                        </div>
-                        <h1>{this.state.hour}  : {this.state.minute} {this.state.AM}</h1>
-                    </Col>
-                    <Button onClick={this.createAlarm}>Set Alarm</Button>
-                </Container>
-            </Container>
+            <div className="bigContainer">
+            <div className="container1">
+                <h1 id="title">Set Alarm</h1>
+                <div className="selections">
+                    <div className="select-container">
+                        <select className="box" value={this.state.hour} title="hour" onChange={this.handleChange}>
+                            {hoursArr.map((e) => (
+                                <option value={e.value}>{e.label}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className="select-container">
+                        <select className="box" value={this.state.minute} title="minute" onChange={this.handleChange}>
+                            {minutesArr.map((e) => (
+                                <option value={e.value}>{e.label}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className="select-container">
+                        <select className="box" id="am" value={this.state.AM} title="AM" onChange={this.handleChange}>
+                            {AMarr.map((e) => (
+                                <option value={e.value}>{e.label}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                </div>
+                <h1 id="time">{this.state.hour}  : {this.state.minute} {this.state.AM}</h1>
+                <Button id="setAlarmButton" onClick={this.createAlarm}>Set Alarm</Button>
+
+            </div>
+            </div>
         );
     }
 }

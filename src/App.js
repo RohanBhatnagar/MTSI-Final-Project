@@ -7,10 +7,12 @@ import SetAlarm from './SetAlarm.js';
 function App() {
   return (
     <div className="App">
-      <Container>
+      <div className="Container">
         <Title />
         <SetAlarm />
-      </Container>
+      </div>
+
+
 
     </div>
   );
