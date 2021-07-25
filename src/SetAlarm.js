@@ -5,13 +5,28 @@ import Select from 'react-select';
 import Button from 'react-bootstrap/Button';
 import firebase from 'firebase';
 import './SetAlarm.css'
+import Table from 'react-bootstrap/Table';
 
 var hoursArr = [];
 var minutesArr = [];
 var AMarr = []
 
+var alarms = [];
 
-
+const urgency = [
+    {
+        value: 0,
+        label: "IMPORTANT"
+    },
+    {
+        value: 2,
+        label: "CASUAL"
+    },
+    {
+        value: 3,
+        label: "PREFERRED"
+    }
+]
 
 export class SetAlarm extends Component {
     constructor(props) {
@@ -23,6 +38,8 @@ export class SetAlarm extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
     }
+
+    //send to firebase
     createAlarm = () => {
         const alarmRef = firebase.database().ref("alarms");
         const hour = this.state.hour;
@@ -34,7 +51,9 @@ export class SetAlarm extends Component {
             AM
         };
         alarmRef.push(element);
-        console.log("data sent")
+        alarms.push(
+            <h>{this.state.hour} : {this.state.minute} : {this.state.AM}</h>
+        )
     }
 
     handleChange = (e) => {
@@ -78,43 +97,51 @@ export class SetAlarm extends Component {
         { AM() }
         return (
             <div className="bigContainer">
-            <div className="container1">
-                <h1 id="title">Set Alarm</h1>
-                <div className="selections">
-                    <div className="select-container">
-                        <select className="box" value={this.state.hour} title="hour" onChange={this.handleChange}>
-                            {hoursArr.map((e) => (
-                                <option value={e.value}>{e.label}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <div className="select-container">
-                        <select className="box" value={this.state.minute} title="minute" onChange={this.handleChange}>
-                            {minutesArr.map((e) => (
-                                <option value={e.value}>{e.label}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <div className="select-container">
-                        <select className="box" id="am" value={this.state.AM} title="AM" onChange={this.handleChange}>
-                            {AMarr.map((e) => (
-                                <option value={e.value}>{e.label}</option>
-                            ))}
-                        </select>
-                    </div>
+                <div className="container1">
+                    <h1 id="title">Set Alarm</h1>
+                    <div className="selections">
+                        <div className="select-container">
+                            <select className="box" value={this.state.hour} title="hour" onChange={this.handleChange}>
+                                {hoursArr.map((e) => (
+                                    <option value={e.value}>{e.label}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="select-container">
+                            <select className="box" value={this.state.minute} title="minute" onChange={this.handleChange}>
+                                {minutesArr.map((e) => (
+                                    <option value={e.value}>{e.label}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="select-container">
+                            <select className="box" id="am" value={this.state.AM} title="AM" onChange={this.handleChange}>
+                                {AMarr.map((e) => (
+                                    <option value={e.value}>{e.label}</option>
+                                ))}
+                            </select>
+                        </div>
 
+                    </div>
+                    <h1 id="time">{this.state.hour}  : {this.state.minute} {this.state.AM}</h1>
+                    <Button id="setAlarmButton" onClick={this.createAlarm}>Set Alarm</Button>
                 </div>
-                <h1 id="time">{this.state.hour}  : {this.state.minute} {this.state.AM}</h1>
-                <Button id="setAlarmButton" onClick={this.createAlarm}>Set Alarm</Button>
+                {/* <Table>
+                    <tbody>
+                        {table()}
+                    </tbody>
+                </Table> */}
+                <select className="urgencyBox">
+                    {urgency.map((e) => (
+                        <option value={e.value}>{e.label}</option>
+                    ))}
+                </select>
 
-            </div>
+
+
             </div>
         );
     }
-}
-
-function sendData() {
-
 }
 
 function hours() {
