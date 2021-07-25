@@ -133,7 +133,10 @@ export class SetAlarm extends Component {
                 </Table> */}
                 <select className="urgencyBox">
                     {urgency.map((e) => (
-                        <option value={e.value}>{e.label}</option>
+                    
+                            <option value={e.value}>{e.label}</option>
+                     
+                        
                     ))}
                 </select>
 
