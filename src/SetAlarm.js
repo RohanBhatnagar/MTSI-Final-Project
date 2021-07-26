@@ -131,6 +131,8 @@ export class SetAlarm extends Component {
                         {table()}
                     </tbody>
                 </Table> */}
+                <div className = "urgencyContainer">
+                <h1 id="urgency">Set Urgency</h1>
                 <select className="urgencyBox">
                     {urgency.map((e) => (
                     
@@ -139,6 +141,8 @@ export class SetAlarm extends Component {
                         
                     ))}
                 </select>
+                </div>
+                
 
 
 

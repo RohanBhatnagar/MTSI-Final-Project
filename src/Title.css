@@ -8,7 +8,10 @@
     
     /*margin-bottom: 0.5em;*/
     /*background-color: #F0A488;*/
-    background: radial-gradient(#fd8d37,#FDAFA4);
+    /*background-color: #ff9424;*/
+    background-color: #ffab31;
+
+    
     color: #fff;
  
     
@@ -20,14 +23,11 @@
       font-family: 'Playfair Display';
       font-weight: 700px;
       text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 19px #fff,
-      0 0 42px #ff834f,
-      0 0 82px #ff834f,
-      0 0 92px #ff834f,
-      0 0 102px #ff834f,
-      0 0 151px #ff834f;
+      0 0 4px #ffe555,
+      0 0 10px #ffe555,
+      0 0 15px #ffe555;
+      
+      letter-spacing: 1.5px;
 
 
   }
