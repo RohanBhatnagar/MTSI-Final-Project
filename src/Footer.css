@@ -1,0 +1,52 @@
+.footerContainer {
+    height: 110px;
+    border-top: 3px solid white;
+    
+    width: 100%;
+    position: absolute;
+    bottom:0; 
+    display:flex;
+    justify-content: space-evenly;
+    padding-top: 12px;
+   
+}
+
+.icon {
+    display:flex;
+    flex-direction: column;
+    width: 65px;
+    height: 70px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+}
+
+.iconImg {
+    padding: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 0;
+}
+
+#home {
+    font-size: 18px;
+    color: black;
+    margin-top: -5px;
+    font-family: Cardo;
+    margin-top: 0.5px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0px;
+}
+
+#calendar {
+    margin-top:4.5px;
+}
+
+@font-face {
+    font-family: 'Cardo';
+    src: local('Cardo'), url('./fonts/Cardo-Regular.ttf') format('truetype');
+
+}

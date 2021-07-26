@@ -1,6 +1,6 @@
 
 .Title {
-    height: 90px;
+    height: 120px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -11,7 +11,7 @@
     /*background-color: #ff9424;*/
     background-color: #ffab31;
 
-    
+    padding-top: 20px;
     color: #fff;
  
     
