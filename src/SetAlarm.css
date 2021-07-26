@@ -1,7 +1,10 @@
 .bigContainer{
     padding: 15px;
-    margin-top: 5px;
+    margin-top: 10px;
     font-family: 'Cardo';
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .container1{
@@ -13,7 +16,7 @@
     justify-content: center;
     display:flex;
     flex-direction: column;
-    
+    margin-bottom: 25px;
 }
 
 .selections {
@@ -45,11 +48,24 @@
     border-width: 0.1px;
    
 }
+
+.urgencyContainer {
+    height: 200px;
+    background-color: white;
+    align-items: center;
+    
+    display:flex;
+    flex-direction: column;
+    padding-top: 0px;
+    
+}
+
+
 .urgencyBox {
     width: 80%;
-    height: 25px;
+    height: 50px;
     padding: 0.1%;
-    padding-left:105px;
+    padding-left:73px;
   
     text-align: center;
     display: flex;
@@ -57,9 +73,16 @@
     margin-top:35px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: center;    
+    font-size: 20px;
+    font-family: 'Cardo';
+    margin-top: 15px;
+
 }
 
-
+#urgency {
+    font-size: 35px;
+    margin-top: 20px;
+}
 
 #am {
     font-size: 21px;
@@ -72,7 +95,8 @@
 }
 
 #setAlarmButton {
-    background-color: #ff845f;
+    background-color: #fc9551;
+
     width: 160px;
     margin-top: 13px;
     height: 40px;

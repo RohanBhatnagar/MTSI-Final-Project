@@ -1,6 +1,6 @@
 import React from 'react';
 import './Title.css';
-import logo from './theiaClear.png';
+import logo from './squareClock.png';
 import './fonts/PlayfairDisplay-Italic.ttf';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
