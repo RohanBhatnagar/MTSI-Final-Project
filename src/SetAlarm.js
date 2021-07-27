@@ -28,6 +28,41 @@ const urgency = [
     }
 ]
 
+var currentAlarms = [];
+
+let database = firebase.database();
+var ref = database.ref('alarms');
+ref.on('value', gotData, errData);
+
+function gotData(data){
+    console.log(data.val());
+    var alarms = data.val();
+    var keys = Object.keys(alarms);
+    for(var i = 0; i < keys.length; i++){
+        let k = keys[i];
+        let hour = alarms[k].hour;
+        let minute = alarms[k].minute;
+        let AM = alarms[k].AM;
+        currentAlarms.push(hour + ":" + minute + " " + AM);
+    }
+}
+
+function errData(err){
+    console.log(err);
+}
+
+function displayAlarms(){
+    for(let i = 0; i < currentAlarms.length; i++){
+        console.log(currentAlarms[i]);
+
+        return(
+            <h1>{currentAlarms[i]}</h1>
+        )
+    }
+}
+
+
+
 export class SetAlarm extends Component {
     constructor(props) {
         super(props);
@@ -55,6 +90,8 @@ export class SetAlarm extends Component {
             <h>{this.state.hour} : {this.state.minute} : {this.state.AM}</h>
         )
     }
+
+
 
     handleChange = (e) => {
         if (e.target.title == "hour") {
@@ -130,22 +167,8 @@ export class SetAlarm extends Component {
                     <h1 id="time">{this.state.hour}  : {this.state.minute} {this.state.AM}</h1>
                     <Button id="setAlarmButton" onClick={this.createAlarm}>Set Alarm</Button>
                 </div>
-                {/* <Table>
-                    <tbody>
-                        {table()}
-                    </tbody>
-                </Table> */}
-                <div className = "urgencyContainer">
-                <h1 id="urgency">Set Urgency</h1>
-                <select className="urgencyBox">
-                    {urgency.map((e) => (
-                    
-                            <option value={e.value}>{e.label}</option>
-                     
-                        
-                    ))}
-                </select>
-                </div>
+                {displayAlarms()}
+                
             </div>
         );
     }
